@@ -45,6 +45,9 @@ console.log(userAge, typeof userAge);
     documentResult = totalPrice - (totalPrice * oldDiscount / 100);
       console.log(documentResult, typeof documentResult);
   }
+  const rounded = Math.round((documentResult + Number.EPSILON) * 100) / 100;
+  console.log(rounded, typeof rounded);
+  documentResult = rounded;
     const result = `il costo del tuo bigliett è ${documentResult}`;
     document.getElementById("cost").innerHTML = result;
 
