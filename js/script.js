@@ -15,10 +15,10 @@ console.log(oldAge, typeof oldAge);
 const priceAtKm = 0.21;
 console.log(priceAtKm, typeof priceAtKm);
 
-const minorDiscount = priceAtKm * 20 / 100;
+const minorDiscount = 20;
 console.log(minorDiscount, typeof minorDiscount);
 
-const oldDiscount = priceAtKm * 40 / 100;
+const oldDiscount = 40;
 console.log(oldDiscount, typeof oldDiscount);
 
 //chiedo i chilometri da percorrere e lo salvo in una variabile
@@ -39,10 +39,10 @@ console.log(userAge, typeof userAge);
             // ALTRIMENTI mostro a schermo il prezzo base
   let documentResult = totalPrice;
   if (userAge < magiorAge) {
-    documentResult = totalPrice - minorDiscount;
+    documentResult = totalPrice - (totalPrice * minorDiscount / 100);
        console.log(documentResult, typeof documentResult);
   } else if(userAge > oldAge){
-    documentResult = totalPrice - oldDiscount;
+    documentResult = totalPrice - (totalPrice * oldDiscount / 100);
       console.log(documentResult, typeof documentResult);
   }
     const result = `il costo del tuo bigliett è ${documentResult}`;
