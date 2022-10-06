@@ -38,17 +38,31 @@ console.log(userAge, typeof userAge);
   //ALTRIMENTI SE l'età del passeggero è maggiore di 65 applico al prezzo lo sconto del 40% e mostro a schermo il prezzo scontato
             // ALTRIMENTI mostro a schermo il prezzo base
   let documentResult = totalPrice;
+  let discount = 0;
   if (userAge < magiorAge) {
     documentResult = totalPrice - (totalPrice * minorDiscount / 100);
        console.log(documentResult, typeof documentResult);
+        discount = `Sconto: ${minorDiscount}%`;
+
   } else if(userAge > oldAge){
     documentResult = totalPrice - (totalPrice * oldDiscount / 100);
       console.log(documentResult, typeof documentResult);
-  }
-  const rounded = Math.round((documentResult + Number.EPSILON) * 100) / 100;
-  console.log(rounded, typeof rounded);
-  documentResult = rounded;
-    const result = `il costo del tuo bigliett è ${documentResult}`;
+      discount = `Sconto: ${oldDiscount}%`;
+    }
+    //mostro nella pagina il chilometri inseriti dall'utente
+    document.getElementById("km").innerHTML = manyKm;
+    //mostro nella pagina gli anni dell'utente
+    document.getElementById("age").innerHTML = userAge;
+    // mostro nella pagina lo sconto applicato al prezzo del biglietto
+    discount = `Sconto: ${discount}`;
+    document.getElementById("discounts").innerHTML = discount;
+    //arrotondo ai centesimi il prezzo finale del biglietto
+    const rounded = Math.round((documentResult + Number.EPSILON) * 100) / 100;
+    console.log(rounded, typeof rounded);
+    documentResult = rounded;
+    // preparo all'output del prezzo del biglietto
+     result = `Costo biglietto: ${documentResult}€`;
+    //  output prezzo biglietto
     document.getElementById("cost").innerHTML = result;
 
     
