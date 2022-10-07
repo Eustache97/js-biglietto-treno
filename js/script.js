@@ -42,19 +42,19 @@ console.log(userAge, typeof userAge);
   if (userAge < magiorAge) {
     documentResult = totalPrice - (totalPrice * minorDiscount / 100);
        console.log(documentResult, typeof documentResult);
-        discount = `Sconto: ${minorDiscount}%`;
+        discount = minorDiscount;
 
   } else if(userAge > oldAge){
     documentResult = totalPrice - (totalPrice * oldDiscount / 100);
       console.log(documentResult, typeof documentResult);
-      discount = `Sconto: ${oldDiscount}%`;
+      discount = oldDiscount;
     }
     //mostro nella pagina il chilometri inseriti dall'utente
     document.getElementById("km").innerHTML = manyKm;
     //mostro nella pagina gli anni dell'utente
     document.getElementById("age").innerHTML = userAge;
     // mostro nella pagina lo sconto applicato al prezzo del biglietto
-    discount = `Sconto: ${discount}`;
+    discount = document.getElementById("discounts").innerHTML + `${discount}%`;
     document.getElementById("discounts").innerHTML = discount;
     //arrotondo ai centesimi il prezzo finale del biglietto
     const rounded = Math.round((documentResult + Number.EPSILON) * 100) / 100;
